@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Trouble sign in?"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.endows.app.views.fragments.login.LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_troubleFragment"
+            app:destination="@id/troubleFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/troubleFragment"
+        android:name="com.endows.app.views.fragments.TroubleFragment"
+        android:label="Trouble sign in"
+        tools:layout="@layout/fragment_trouble" >
+        <action
+            android:id="@+id/action_troubleFragment_to_findAccountFragment"
+            app:destination="@id/findAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findAccountFragment"
+        android:name="com.endows.app.views.fragments.findaccount.FindAccountFragment"
+        android:label="Find your account"
+        tools:layout="@layout/fragment_find_account" >
+        <action
+            android:id="@+id/action_findAccountFragment_to_enterOTPFragment"
+            app:destination="@id/enterOTPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmAccountFragment"
+        android:name="com.endows.app.views.fragments.confirm.ConfirmAccountFragment"
+        android:label="Confirm password"
+        tools:layout="@layout/fragment_confirm_account" >
+        <action
+            android:id="@+id/action_confirmAccountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterOTPFragment"
+        android:name="com.endows.app.views.fragments.otp.EnterOTPFragment"
+        android:label="Enter OTP"
+        tools:layout="@layout/fragment_enter_otp" >
+        <action
+            android:id="@+id/action_enterOTPFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_enterOTPFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.endows.app.views.fragments.reset.ResetPasswordFragment"
+        android:label="Reset password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

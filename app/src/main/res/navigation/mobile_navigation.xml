@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.endows.app.views.fragments.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <argument android:name="customer_details"
+            app:argType="com.endows.app.models.db.Customers"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_nav_home_to_interacFragment"
+            app:destination="@id/interacFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_transferFragment"
+            app:destination="@id/transferFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_payBillFragment"
+            app:destination="@id/payBillFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/interacFragment"
+        android:name="com.endows.app.views.fragments.interac.InteracFragment"
+        android:label="Transfer amount"
+        tools:layout="@layout/fragment_interac">
+        <action
+            android:id="@+id/action_interacFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_interacFragment_to_toFragment"
+            app:destination="@id/toFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.endows.app.views.fragments.addaccount.AddContactFragment"
+        android:label="Add account"
+        tools:layout="@layout/fragment_add_contact" >
+        <action
+            android:id="@+id/action_addContactFragment_to_interacFragment"
+            app:destination="@id/interacFragment" />
+        <action
+            android:id="@+id/action_addContactFragment_to_toFragment"
+            app:destination="@id/toFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/toFragment"
+        android:name="com.endows.app.views.fragments.to.ToFragment"
+        android:label="To"
+        tools:layout="@layout/fragment_to">
+        <action
+            android:id="@+id/action_toFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_toFragment_to_interacFragment"
+            app:destination="@id/interacFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="com.endows.app.views.fragments.transfer.TransferFragment"
+        android:label="Move amount"
+        tools:layout="@layout/fragment_transfer">
+        <action
+            android:id="@+id/action_transferFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/payBillFragment"
+        android:name="com.endows.app.views.fragments.bill.PayBillFragment"
+        android:label="Bill payment"
+        tools:layout="@layout/fragment_pay_bill" >
+        <action
+            android:id="@+id/action_payBillFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.endows.app.views.fragments.privacy.PrivacyFragment"
+        android:label="Privacy and safety"
+        tools:layout="@layout/fragment_privacy" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.endows.app.views.fragments.contact.ContactFragment"
+        android:label="Contact us"
+        tools:layout="@layout/fragment_contact" />
+
+
+</navigation>
